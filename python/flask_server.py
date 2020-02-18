@@ -5,16 +5,16 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import io
 import sys
-import utils_series_temp as ust
-import utils_nordest_plot as unp
+from utils import series_temp, nordest_plot
+from inmet.WebScraper import InmetWS
 import pandas as pd
  
 # initialize the flask application
 app = Flask(__name__)
 
-############
-# Nordeste # 
-############
+#####################
+# Nordeste Espacial # 
+#####################
 
 @app.route("/Nordeste_columns", methods=["POST"])
 def get_nordeste_columns():
@@ -33,31 +33,38 @@ def plotly_nordeste():
     json = request.json
     coluna = json['Coluna']
     colormap = json['ColorMap']
-    return unp.plotly_nordeste(coluna, colormap)
+    return nordest_plot.plotly_nordeste(coluna, colormap)
 
 @app.route("/Plot_Nordeste", methods=["POST"])
 def plot_nordeste():
     json = request.json
     coluna = json['Coluna']
     colormap = json['ColorMap']
-    fig = unp.plot_nordeste(coluna, colormap)
+    fig = nordest_plot.plot_nordeste(coluna, colormap)
     output = io.BytesIO()
     FigureCanvas(fig).print_png(output)
     return Response(output.getvalue(), mimetype='image/png')
 
-#################### 
-# Séries temporais #
-####################
+######################## 
+# ONS Series temporais #
+########################
 
 @app.route("/time_series", methods=["POST"])
 def plot_png_bjl_solar():
-    json = request.json
-    usina = json['Usina']
-    diretorio = "time_series/"+usina+"/"
-    fig = ust.create_time_series(diretorio)
+    diretorio = "time_series/"+request.json['Usina']+"/"
+    fig = series_temp.create_time_series(diretorio)
     output = io.BytesIO()
     FigureCanvas(fig).print_png(output)
     return Response(output.getvalue(), mimetype='image/png')
+
+##################
+# INMET SCRAPING #
+##################
+@app.route("/inmet_scraping", methods=["POST"])
+def InmetScraping():
+    Inws = InmetWS(login=request.json['login'], senha=request.json['senha'])
+    Inws.scrap()
+    return 'InmetScraped'
 
 if __name__ == "__main__":
     app.run(debug=True, host="localhost", port=5000)

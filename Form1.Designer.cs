@@ -34,6 +34,15 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,11 +61,20 @@
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.ScrapButtonINMET = new System.Windows.Forms.Button();
+            this.usuarioINMET = new System.Windows.Forms.TextBox();
+            this.senhaINMET = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.TagMenu.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -137,13 +155,14 @@
             // TagMenu
             // 
             this.TagMenu.Controls.Add(this.tabPage3);
+            this.TagMenu.Controls.Add(this.tabPage4);
             this.TagMenu.Controls.Add(this.tabPage1);
             this.TagMenu.Controls.Add(this.tabPage2);
             this.TagMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TagMenu.Location = new System.Drawing.Point(-1, 0);
+            this.TagMenu.Location = new System.Drawing.Point(-1, 4);
             this.TagMenu.Name = "TagMenu";
             this.TagMenu.SelectedIndex = 0;
-            this.TagMenu.Size = new System.Drawing.Size(998, 536);
+            this.TagMenu.Size = new System.Drawing.Size(998, 532);
             this.TagMenu.TabIndex = 21;
             this.TagMenu.Tag = "TagMenu";
             // 
@@ -154,7 +173,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(990, 507);
+            this.tabPage3.Size = new System.Drawing.Size(990, 503);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Configuração";
             // 
@@ -175,7 +194,7 @@
             // button4
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Location = new System.Drawing.Point(378, 224);
+            this.button4.Location = new System.Drawing.Point(324, 235);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(185, 39);
             this.button4.TabIndex = 2;
@@ -202,6 +221,108 @@
             this.textBox1.Size = new System.Drawing.Size(427, 23);
             this.textBox1.TabIndex = 0;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.groupBox7);
+            this.tabPage4.Controls.Add(this.groupBox6);
+            this.tabPage4.Controls.Add(this.groupBox5);
+            this.tabPage4.Controls.Add(this.groupBox4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(990, 503);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "WebScraping";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox7.Controls.Add(this.label9);
+            this.groupBox7.Location = new System.Drawing.Point(3, 277);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(481, 219);
+            this.groupBox7.TabIndex = 5;
+            this.groupBox7.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label9.Font = new System.Drawing.Font("Lucida Bright", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(167, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(95, 32);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "PVGIS";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox6.Controls.Add(this.label10);
+            this.groupBox6.Location = new System.Drawing.Point(496, 277);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(492, 221);
+            this.groupBox6.TabIndex = 4;
+            this.groupBox6.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label10.Font = new System.Drawing.Font("Lucida Bright", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(195, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(121, 32);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "LABREN";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox5.Controls.Add(this.button6);
+            this.groupBox5.Controls.Add(this.label8);
+            this.groupBox5.Location = new System.Drawing.Point(496, 6);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(493, 269);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label8.Font = new System.Drawing.Font("Lucida Bright", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(217, 28);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 32);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "ONS";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox4.Controls.Add(this.senhaINMET);
+            this.groupBox4.Controls.Add(this.usuarioINMET);
+            this.groupBox4.Controls.Add(this.ScrapButtonINMET);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Location = new System.Drawing.Point(6, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(478, 269);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label7.Font = new System.Drawing.Font("Lucida Bright", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(171, 28);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 32);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "INMET";
+            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Gainsboro;
@@ -210,7 +331,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(990, 507);
+            this.tabPage1.Size = new System.Drawing.Size(990, 503);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Espacial";
             // 
@@ -224,7 +345,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(990, 507);
+            this.tabPage2.Size = new System.Drawing.Size(990, 503);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Temporal";
             // 
@@ -399,13 +520,48 @@
             this.listBox1.Size = new System.Drawing.Size(179, 61);
             this.listBox1.TabIndex = 12;
             // 
+            // ScrapButtonINMET
+            // 
+            this.ScrapButtonINMET.Location = new System.Drawing.Point(157, 192);
+            this.ScrapButtonINMET.Name = "ScrapButtonINMET";
+            this.ScrapButtonINMET.Size = new System.Drawing.Size(114, 51);
+            this.ScrapButtonINMET.TabIndex = 2;
+            this.ScrapButtonINMET.Text = "Scrap";
+            this.ScrapButtonINMET.UseVisualStyleBackColor = true;
+            this.ScrapButtonINMET.Click += new System.EventHandler(this.ScrapButtonINMET_Click);
+            // 
+            // usuarioINMET
+            // 
+            this.usuarioINMET.Location = new System.Drawing.Point(113, 95);
+            this.usuarioINMET.Name = "usuarioINMET";
+            this.usuarioINMET.Size = new System.Drawing.Size(204, 23);
+            this.usuarioINMET.TabIndex = 3;
+            this.usuarioINMET.Text = "Usuario";
+            // 
+            // senhaINMET
+            // 
+            this.senhaINMET.Location = new System.Drawing.Point(113, 148);
+            this.senhaINMET.Name = "senhaINMET";
+            this.senhaINMET.Size = new System.Drawing.Size(204, 23);
+            this.senhaINMET.TabIndex = 4;
+            this.senhaINMET.Text = "Senha";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(201, 192);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(114, 51);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "Load Series";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.ClientSize = new System.Drawing.Size(1000, 537);
+            this.ClientSize = new System.Drawing.Size(998, 538);
             this.Controls.Add(this.TagMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -419,6 +575,15 @@
             this.tabPage3.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -460,6 +625,19 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox senhaINMET;
+        private System.Windows.Forms.TextBox usuarioINMET;
+        private System.Windows.Forms.Button ScrapButtonINMET;
     }
 }
 

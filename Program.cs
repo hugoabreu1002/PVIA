@@ -128,6 +128,35 @@ namespace Plataforma_Integrada
 
             return webResponse;
         }
+
+        public static string Request_INMET_Scraping(string nome_usuario, string senha_usuario)
+        {
+            // Construct HTTP request to get the file
+            string uirWebAPI, webResponse;
+
+            uirWebAPI = "http://localhost:5000/time_series";
+
+            Uri uri = new Uri(uirWebAPI);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+            request.ContentType = "application/json";
+            request.Method = "POST";
+
+            using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+            {
+                string json = "{\"login\":\"" + nome_usuario + "\", \"senha\": \"" +senha_usuario+"\"}";
+                streamWriter.Write(json);
+            }
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+            using (StreamReader streamReader = new StreamReader(response.GetResponseStream()))
+            {
+                webResponse = streamReader.ReadToEnd();
+            }
+
+            return webResponse;
+        }
+
         public static void StartServer()
         {
 

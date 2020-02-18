@@ -144,5 +144,10 @@ namespace Plataforma_Integrada
                 }
             }
         }
+
+        private void ScrapButtonINMET_Click(object sender, EventArgs e)
+        {
+            Program.Request_INMET_Scraping(usuarioINMET.Text, senhaINMET.Text);
+        }
     }
 }
