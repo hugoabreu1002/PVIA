@@ -227,3 +227,10 @@ project.lock.json
 *.html
 packages/
 python/plotly_hmtls
+
+#################################
+# chromium driver ignore ########
+#################################
+
+chromedriver.exe
+

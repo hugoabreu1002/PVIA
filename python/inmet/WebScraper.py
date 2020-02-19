@@ -59,7 +59,7 @@ class InmetWS:
                     options.add_argument('--no-sandbox')
                     options.add_argument('--disable-dev-shm-usage')
 
-                    browser = webdriver.Chrome('chromedriver', options=options)	#for macOS users[for others use chrome vis chromedriver]
+                    browser = webdriver.Chrome('chromedriver.exe', options=options)	#for macOS users[for others use chrome vis chromedriver]
                     browser.get(website_link)	
 
                     browser.find_element_by_name("mCod").send_keys(self.login)	
@@ -67,7 +67,7 @@ class InmetWS:
                     browser.find_element_by_xpath('//input[@type="submit" and @value=" Acessar "]').click()
                     browser.implicitly_wait(3)
 
-                    page1 = open('page1.html','w')
+                    page1 = open('inmet/page1.html','w')
                     page1.write(browser.page_source)
                     page1.close()
 
@@ -76,7 +76,7 @@ class InmetWS:
                     browser.find_element_by_xpath('//a[@href="form_mapas_mensal.php"]').click()
                     browser.implicitly_wait(3)
 
-                    page2 = open('page2.html','w')
+                    page2 = open('inmet/page2.html','w')
                     page2.write(browser.page_source)
                     page2.close()
 
@@ -93,7 +93,7 @@ class InmetWS:
                     browser.switch_to.alert.accept()
                     browser.implicitly_wait(3) 
 
-                    page3 = open('page3.html','w')
+                    page3 = open('inmet/page3.html','w')
                     page3.write(browser.page_source)
                     page3.close()
 
@@ -101,7 +101,7 @@ class InmetWS:
 
                     browser.find_element_by_link_text('_'.replace('_', cidade)).click()
 
-                    page4 = open('page4.html','w')
+                    page4 = open('inmet/page4.html','w')
                     page4.write(browser.page_source)
                     page4.close()
 
@@ -112,7 +112,7 @@ class InmetWS:
                     window_after = browser.window_handles[1]
                     browser.switch_to.window(window_after)
 
-                    page5 = open('page5.html','w')
+                    page5 = open('inmet/page5.html','w')
                     page5.write(browser.page_source)
                     page5.close()
 

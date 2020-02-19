@@ -1,5 +1,6 @@
 # import flask microframework library
 from flask import Flask, json, jsonify, request, send_file, Response
+import traceback
 import numpy as np 
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
@@ -20,13 +21,13 @@ app = Flask(__name__)
 def get_nordeste_columns():
     df_all = pd.read_csv('nordeste_plot/df_todas_colunas_plus_IA.csv')
     try:
-        response = jsonify({'lista_colunas': list(df_all.columns[3:])})
-        response.status_code = 200  
+        response_json = jsonify({'lista_colunas': list(df_all.columns[3:])})
+        response_json.status_code = 200  
     except:
         exception_message = 'Server Not Connected'
-        response = json.dumps({"content":exception_message})
-        response.status_code = 400
-    return response
+        response_json = json.dumps({"content":exception_message})
+        response_json.status_code = 400
+    return response_json
 
 @app.route("/Plotly_Nordeste", methods=["POST"])
 def plotly_nordeste():
@@ -62,9 +63,10 @@ def plot_png_bjl_solar():
 ##################
 @app.route("/inmet_scraping", methods=["POST"])
 def InmetScraping():
+    print('requisitando')
     Inws = InmetWS(login=request.json['login'], senha=request.json['senha'])
     Inws.scrap()
-    return 'InmetScraped'
+    return jsonify({'trace': traceback.format_exc()})
 
 if __name__ == "__main__":
-    app.run(debug=True, host="localhost", port=5000)
+    app.run(debug=True, port=8080)

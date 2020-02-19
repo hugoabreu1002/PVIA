@@ -26,7 +26,7 @@ namespace Plataforma_Integrada
             string uirWebAPI;
             Image img;
 
-            uirWebAPI = "http://localhost:5000/time_series";
+            uirWebAPI = "http://localhost:8080/time_series";
 
             Uri uri = new Uri(uirWebAPI);
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
@@ -54,7 +54,7 @@ namespace Plataforma_Integrada
         {
             string uirWebAPI, webResponse;
 
-            uirWebAPI = "http://localhost:5000/Nordeste_columns";
+            uirWebAPI = "http://localhost:8080/Nordeste_columns";
 
             Uri uri = new Uri(uirWebAPI);
             WebRequest request = (HttpWebRequest)WebRequest.Create(uri);
@@ -78,7 +78,7 @@ namespace Plataforma_Integrada
             string uirWebAPI;
             Image img;
 
-            uirWebAPI = "http://localhost:5000/Plot_Nordeste";
+            uirWebAPI = "http://localhost:8080/Plot_Nordeste";
 
             Uri uri = new Uri(uirWebAPI);
             WebRequest request = (HttpWebRequest)WebRequest.Create(uri);
@@ -106,7 +106,7 @@ namespace Plataforma_Integrada
 
             string uirWebAPI, webResponse;
 
-            uirWebAPI = "http://localhost:5000/Plotly_Nordeste";
+            uirWebAPI = "http://localhost:8080/Plotly_Nordeste";
 
             Uri uri = new Uri(uirWebAPI);
             WebRequest request = (HttpWebRequest)WebRequest.Create(uri);
@@ -134,7 +134,7 @@ namespace Plataforma_Integrada
             // Construct HTTP request to get the file
             string uirWebAPI, webResponse;
 
-            uirWebAPI = "http://localhost:5000/time_series";
+            uirWebAPI = "http://localhost:8080/inmet_scraping";
 
             Uri uri = new Uri(uirWebAPI);
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
