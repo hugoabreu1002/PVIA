@@ -72,7 +72,7 @@ class InmetWS:
                     browser.find_element_by_name("mCod").send_keys(self.login)	
                     browser.find_element_by_name("mSenha").send_keys(self.senha)
                     browser.find_element_by_xpath('//input[@type="submit" and @value=" Acessar "]').click()
-                    browser.implicitly_wait(10)
+                    browser.implicitly_wait(1)
 
                     if save_pages:
                         page1 = open('inmet/page1.html','w')
@@ -82,7 +82,7 @@ class InmetWS:
                     #--------------------------------------------------------------------#
 
                     browser.find_element_by_xpath('//a[@href="form_mapas_mensal.php"]').click()
-                    browser.implicitly_wait(10)
+                    browser.implicitly_wait(1)
 
                     if save_pages:
                         page2 = open('inmet/page2.html','w')
@@ -100,7 +100,7 @@ class InmetWS:
 
                     browser.find_element_by_xpath('//input[@name="btnProcesso1"]').click()
                     browser.switch_to.alert.accept()
-                    browser.implicitly_wait(10) 
+                    browser.implicitly_wait(1) 
 
                     if save_pages:
                         page3 = open('inmet/page3.html','w')
@@ -110,7 +110,7 @@ class InmetWS:
                     #--------------------------------------------------------------------#
 
                     browser.find_element_by_link_text('_'.replace('_', cidade)).click()
-                    browser.implicitly_wait(10) 
+                    browser.implicitly_wait(1) 
                     if save_pages:
                         page4 = open('inmet/page4.html','w')
                         page4.write(browser.page_source)
@@ -120,7 +120,7 @@ class InmetWS:
 
                     browser.find_element_by_xpath('//img[@alt="Dados"]').click()
                     browser.switch_to.window(browser.window_handles[1])
-                    browser.implicitly_wait(10) 
+                    browser.implicitly_wait(1) 
                     
                     if save_pages:
                         page5 = open('inmet/page5.html','w')
@@ -129,7 +129,7 @@ class InmetWS:
 
                     str_browser_dados = browser.page_source
                     browser.close()
-                    browser.implicitly_wait(10)
+                    browser.implicitly_wait(1)
                     browser.switch_to.window(browser.window_handles[0])
                 except:
                     continue

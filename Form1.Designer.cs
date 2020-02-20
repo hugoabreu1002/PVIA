@@ -40,8 +40,14 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.senhaINMET = new System.Windows.Forms.TextBox();
+            this.usuarioINMET = new System.Windows.Forms.TextBox();
+            this.ScrapButtonINMET = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -61,10 +67,6 @@
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.ScrapButtonINMET = new System.Windows.Forms.Button();
-            this.usuarioINMET = new System.Windows.Forms.TextBox();
-            this.senhaINMET = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.TagMenu.SuspendLayout();
@@ -216,10 +218,13 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(136, 181);
+            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBox1.Location = new System.Drawing.Point(37, 181);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(427, 23);
+            this.textBox1.Size = new System.Drawing.Size(526, 23);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tabPage4
             // 
@@ -288,6 +293,15 @@
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(201, 192);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(114, 51);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "Load Series";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -302,6 +316,8 @@
             // groupBox4
             // 
             this.groupBox4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.senhaINMET);
             this.groupBox4.Controls.Add(this.usuarioINMET);
             this.groupBox4.Controls.Add(this.ScrapButtonINMET);
@@ -311,6 +327,56 @@
             this.groupBox4.Size = new System.Drawing.Size(478, 269);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.Window;
+            this.label12.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(67, 148);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 20);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Senha:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(45, 98);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(79, 20);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Ususário:";
+            // 
+            // senhaINMET
+            // 
+            this.senhaINMET.Location = new System.Drawing.Point(130, 148);
+            this.senhaINMET.Name = "senhaINMET";
+            this.senhaINMET.Size = new System.Drawing.Size(204, 23);
+            this.senhaINMET.TabIndex = 4;
+            this.senhaINMET.Text = "Senha";
+            this.senhaINMET.UseSystemPasswordChar = true;
+            // 
+            // usuarioINMET
+            // 
+            this.usuarioINMET.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.usuarioINMET.Location = new System.Drawing.Point(130, 95);
+            this.usuarioINMET.Name = "usuarioINMET";
+            this.usuarioINMET.Size = new System.Drawing.Size(204, 23);
+            this.usuarioINMET.TabIndex = 3;
+            this.usuarioINMET.Text = "Guest";
+            // 
+            // ScrapButtonINMET
+            // 
+            this.ScrapButtonINMET.Location = new System.Drawing.Point(157, 192);
+            this.ScrapButtonINMET.Name = "ScrapButtonINMET";
+            this.ScrapButtonINMET.Size = new System.Drawing.Size(114, 51);
+            this.ScrapButtonINMET.TabIndex = 2;
+            this.ScrapButtonINMET.Text = "Scrap";
+            this.ScrapButtonINMET.UseVisualStyleBackColor = true;
+            this.ScrapButtonINMET.Click += new System.EventHandler(this.ScrapButtonINMET_Click);
             // 
             // label7
             // 
@@ -520,41 +586,6 @@
             this.listBox1.Size = new System.Drawing.Size(179, 61);
             this.listBox1.TabIndex = 12;
             // 
-            // ScrapButtonINMET
-            // 
-            this.ScrapButtonINMET.Location = new System.Drawing.Point(157, 192);
-            this.ScrapButtonINMET.Name = "ScrapButtonINMET";
-            this.ScrapButtonINMET.Size = new System.Drawing.Size(114, 51);
-            this.ScrapButtonINMET.TabIndex = 2;
-            this.ScrapButtonINMET.Text = "Scrap";
-            this.ScrapButtonINMET.UseVisualStyleBackColor = true;
-            this.ScrapButtonINMET.Click += new System.EventHandler(this.ScrapButtonINMET_Click);
-            // 
-            // usuarioINMET
-            // 
-            this.usuarioINMET.Location = new System.Drawing.Point(113, 95);
-            this.usuarioINMET.Name = "usuarioINMET";
-            this.usuarioINMET.Size = new System.Drawing.Size(204, 23);
-            this.usuarioINMET.TabIndex = 3;
-            this.usuarioINMET.Text = "Usuario";
-            // 
-            // senhaINMET
-            // 
-            this.senhaINMET.Location = new System.Drawing.Point(113, 148);
-            this.senhaINMET.Name = "senhaINMET";
-            this.senhaINMET.Size = new System.Drawing.Size(204, 23);
-            this.senhaINMET.TabIndex = 4;
-            this.senhaINMET.Text = "Senha";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(201, 192);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(114, 51);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "Load Series";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -638,6 +669,8 @@
         private System.Windows.Forms.TextBox senhaINMET;
         private System.Windows.Forms.TextBox usuarioINMET;
         private System.Windows.Forms.Button ScrapButtonINMET;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
     }
 }
 

@@ -89,7 +89,7 @@ namespace Plataforma_Integrada
             dateTimePicker2.Format = DateTimePickerFormat.Custom;
             dateTimePicker2.CustomFormat = "dd-MM-yyyy";
 
-            textBox1.Text = exePath;
+            textBox1.Text = Path.GetFullPath(Path.Combine(exePath, @"..\..\"));
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -104,15 +104,19 @@ namespace Plataforma_Integrada
 
         private void button4_Click(object sender, EventArgs e)
         {
-
             Thread ServerThread = new Thread(Program.StartServer);
-
             ServerThread.Start();
-
             try
             {
                 listBox2.Items.Clear();
                 listBox2.Items.AddRange(Program.Request_Nordest_columns());
+
+                MessageBox.Show(
+                  "Conectado!",
+                  "Servidor",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Information //For triangle Warning 
+                );
             }
             catch
             {

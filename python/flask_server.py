@@ -63,7 +63,7 @@ def plot_png_bjl_solar():
 ##################
 @app.route("/inmet_scraping", methods=["POST"])
 def InmetScraping():
-    print('requisitando')
+    print('requisitando', request.json)
     Inws = InmetWS(login=request.json['login'], senha=request.json['senha'])
     Inws.scrap()
     return jsonify({'trace': traceback.format_exc()})
