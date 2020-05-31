@@ -12,8 +12,9 @@ ao cadastrar uma usina ele cadastrará as variáveis exógenas e de geração *s
 Com isso o programa irá salvar no banco de dados. E daí depois vêm a parte do processamento em python que irá fazer todo o resto.
 
 ## To Do
- 0. Restruturar código. Acabar com a história de web scraping de vez.
- 1. Escolher banco de dados para rodar
+ 0. Escolher arquitetura para forecasting temporal 
+ 1. Restruturar código. Acabar com a história de web scraping de vez.
+ 2. Escolher banco de dados para rodar
 
 ## FRONT END
 
