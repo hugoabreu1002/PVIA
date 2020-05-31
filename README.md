@@ -4,16 +4,16 @@ An app for Power Plantas data visualization over Brazilian Northest.
 
 ## requiriments
 
- 0. Donwload [chromiumn](https://sites.google.com/a/chromium.org/chromedriver/downloads) driver and put the .exe
-  in the python folder
+## Novo funcionamento
+
+Por conta da dificuldade e chatice que é pegar os dados do inmet e ons pela web, então o usário irar ter que manualmente cadastrar cada uma das usinas no programa.
+ao cadastrar uma usina ele cadastrará as variáveis exógenas e de geração *sempre horárias* e irá fazer import dos dados usando .csv ou .xlsx.
+
+Com isso o programa irá salvar no banco de dados. E daí depois vêm a parte do processamento em python que irá fazer todo o resto.
 
 ## To Do
- 0. Make C# and Python requirements.txt or equivalent
- 1. Finish Web Scraping INMET - But never use it, couse it can lead to web block, or only use it with vpn.
-    This scraping Idea is not very nice, deal with it and move on.
- 2. Time series further forecast. 
- 3. Automate AI/Interpolation Espatial models.
- 4. Fix frontend autosize.
+ 0. Restruturar código. Acabar com a história de web scraping de vez.
+ 1. Escolher banco de dados para rodar
 
 ## FRONT END
 
